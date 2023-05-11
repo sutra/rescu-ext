@@ -29,6 +29,16 @@
 			<artifactId>rescu-ext-singleton</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rescu-ext-rate-limiter-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 	<reporting>
 		<plugins>
