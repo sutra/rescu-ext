@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr.rescu</groupId>
 		<artifactId>rescu-ext</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>rescu-ext-coverage</artifactId>
 	<name>ResCU Extension Coverage</name>
@@ -27,6 +27,16 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>rescu-ext-singleton</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rescu-ext-rate-limiter-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

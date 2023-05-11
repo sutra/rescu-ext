@@ -8,30 +8,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.oxerr.rescu</groupId>
-		<artifactId>rescu-ext</artifactId>
+		<artifactId>rescu-ext-rate-limiter</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>rescu-ext-singleton</artifactId>
-	<name>ResCU Singleton Support</name>
-	<description>
-		Add singleton support for ResCU.
-	</description>
+	<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.mmazi</groupId>
-			<artifactId>rescu</artifactId>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>rescu-ext-proxy-auth</artifactId>
+			<artifactId>rescu-ext-rate-limiter-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

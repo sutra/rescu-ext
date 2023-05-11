@@ -16,7 +16,7 @@
 	<name>ResCU Extensions</name>
 	<description>Extensions to the ResCU.</description>
 	<packaging>pom</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<url>https://www.oxerr.org/rescu-ext</url>
 	<inceptionYear>2023</inceptionYear>
 	<properties>
@@ -26,6 +26,7 @@
 	<modules>
 		<module>rescu-ext-proxy-auth</module>
 		<module>rescu-ext-singleton</module>
+		<module>rescu-ext-rate-limiter</module>
 		<module>rescu-ext-coverage</module>
 	</modules>
 	<build>
@@ -72,6 +73,11 @@
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-api</artifactId>
 				<version>5.9.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.redisson</groupId>
+				<artifactId>redisson</artifactId>
+				<version>3.21.0</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.mmazi</groupId>
