@@ -5,12 +5,8 @@ import org.redisson.api.RRateLimiter;
 import org.redisson.api.RateIntervalUnit;
 import org.redisson.api.RateType;
 import org.redisson.api.RedissonClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RedissonRateLimiter implements RateLimiter {
-
-	private final Logger log = LoggerFactory.getLogger(RedissonRateLimiter.class);
 
 	private final RRateLimiter rateLimiter;
 
@@ -33,12 +29,7 @@ public class RedissonRateLimiter implements RateLimiter {
 
 	@Override
 	public void acquire() {
-		if (log.isTraceEnabled()) {
-			log.trace("Acquiring..., available permits: {}", this.rateLimiter.availablePermits());
-		}
-
 		this.rateLimiter.acquire();
-		log.trace("Acquired.");
 	}
 
 }
