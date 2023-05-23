@@ -12,6 +12,7 @@
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
+	<name>ResCU Rate Limiter - Redisson Implementation</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.redisson</groupId>
