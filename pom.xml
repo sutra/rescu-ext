@@ -27,6 +27,7 @@
 		<module>rescu-ext-proxy-auth</module>
 		<module>rescu-ext-singleton</module>
 		<module>rescu-ext-rate-limiter</module>
+		<module>rescu-ext-rate-meter</module>
 		<module>rescu-ext-coverage</module>
 	</modules>
 	<build>
@@ -70,9 +71,11 @@
 				<version>3.12.0</version>
 			</dependency>
 			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-api</artifactId>
-				<version>5.10.0-M1</version>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.9.3</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.redisson</groupId>
