@@ -11,10 +11,10 @@
 		<artifactId>rescu-ext</artifactId>
 		<version>0.0.3</version>
 	</parent>
-	<artifactId>rescu-ext-rate-limiter</artifactId>
+	<artifactId>rescu-ext-rate-meter</artifactId>
 	<packaging>pom</packaging>
 	<modules>
-		<module>rescu-ext-rate-limiter-core</module>
-		<module>rescu-ext-rate-limiter-redisson</module>
+		<module>rescu-ext-rate-meter-core</module>
+		<module>rescu-ext-rate-meter-redisson</module>
 	</modules>
 </project>

@@ -8,19 +8,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.oxerr.rescu</groupId>
-		<artifactId>rescu-ext-rate-limiter</artifactId>
+		<artifactId>rescu-ext-rate-meter</artifactId>
 		<version>0.0.3</version>
 	</parent>
-	<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
+	<artifactId>rescu-ext-rate-meter-core</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>org.redisson</groupId>
-			<artifactId>redisson</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>rescu-ext-rate-limiter-core</artifactId>
-			<version>${project.version}</version>
+			<groupId>com.github.mmazi</groupId>
+			<artifactId>rescu</artifactId>
 		</dependency>
 	</dependencies>
 </project>
