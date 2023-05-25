@@ -3,6 +3,7 @@ package org.oxerr.rescu.ext.ratemeter.redisson;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.TemporalUnit;
+import java.util.Optional;
 
 import org.oxerr.rescu.ext.ratemeter.RateMeter;
 import org.redisson.api.ExpiredObjectListener;
@@ -22,20 +23,18 @@ public class RedissonRateMeter implements RateMeter {
 
 	private final RMap<String, Instant> props;
 
-	public RedissonRateMeter(RedissonClient redisson, String keyPrefix, Duration measureDuration) {
-		String meterName = String.format("%s:rateMeter", keyPrefix);
-		String propsName = String.format("%s:props", meterName);
-
-		Instant now = Instant.now();
-		Instant expireDate = Instant.now().plus(measureDuration);
+	public RedissonRateMeter(
+		final RedissonClient redisson,
+		final String keyPrefix,
+		final Duration measureDuration
+	) {
+		final String meterName = String.format("%s:rateMeter", keyPrefix);
+		final String propsName = String.format("%s:props", meterName);
 
 		this.rateMeter = redisson.getAtomicLong(meterName);
-		this.rateMeter.expire(expireDate);
-
 		this.props = redisson.getMap(propsName);
-		this.props.expire(expireDate);
 
-		this.props.put(CREATED, now);
+		this.init(measureDuration);
 
 		this.rateMeter.addListener(new ExpiredObjectListener() {
 
@@ -43,12 +42,22 @@ public class RedissonRateMeter implements RateMeter {
 			public void onExpired(String name) {
 				log.trace("onExpired({})", name);
 
-				if (name.equals(meterName)) {
-					props.put(CREATED, Instant.now());
+				if (name.equals(meterName) || name.equals(propsName)) {
+					init(measureDuration);
 				}
 			}
 
 		});
+	}
+
+	private void init(final Duration measureDuration) {
+		final Instant now = Instant.now();
+		final Instant expireDate = now.plus(measureDuration);
+
+		this.props.expire(expireDate);
+		this.rateMeter.expire(expireDate);
+
+		this.props.put(CREATED, now);
 	}
 
 	@Override
@@ -57,13 +66,17 @@ public class RedissonRateMeter implements RateMeter {
 	}
 
 	@Override
-	public long getRate(TemporalUnit unit) {
+	public Optional<Long> getRate(TemporalUnit unit) {
 		long count = this.rateMeter.get();
 
 		Instant created = this.props.get(CREATED);
+		if (created == null) {
+			return Optional.empty();
+		}
+
 		Instant now = Instant.now();
 
-		return getRate(count, created, now, unit);
+		return Optional.of(getRate(count, created, now, unit));
 	}
 
 	static long getRate(long count, Instant s, Instant e, TemporalUnit unit) {
