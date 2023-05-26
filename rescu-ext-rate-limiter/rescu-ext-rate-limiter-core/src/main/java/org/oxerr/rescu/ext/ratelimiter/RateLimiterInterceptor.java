@@ -5,11 +5,11 @@ import java.lang.reflect.Method;
 
 import si.mazi.rescu.Interceptor;
 
-public class RateLimitInterceptor implements Interceptor {
+public class RateLimiterInterceptor implements Interceptor {
 
 	private final RateLimiter rateLimiter;
 
-	public RateLimitInterceptor(RateLimiter rateLimiter) {
+	public RateLimiterInterceptor(RateLimiter rateLimiter) {
 		this.rateLimiter = rateLimiter;
 	}
 
