@@ -10,6 +10,10 @@ public class RedissonRateLimiter implements RateLimiter {
 
 	private final RRateLimiter rateLimiter;
 
+	public RedissonRateLimiter(RRateLimiter rateLimiter) {
+		this.rateLimiter = rateLimiter;
+	}
+
 	public RedissonRateLimiter(RedissonClient redisson, String keyPrefix) {
 		String limiterName = String.format("%s:rateLimiter", keyPrefix);
 		this.rateLimiter = redisson.getRateLimiter(limiterName);
@@ -32,13 +36,8 @@ public class RedissonRateLimiter implements RateLimiter {
 		this.rateLimiter.acquire();
 	}
 
-	/**
-	 * Returns amount of available permits.
-	 *
-	 * @return number of permits
-	 */
-	public long availablePermits() {
-		return this.rateLimiter.availablePermits();
+	public RRateLimiter getRateLimiter() {
+		return this.rateLimiter;
 	}
 
 }
