@@ -32,4 +32,13 @@ public class RedissonRateLimiter implements RateLimiter {
 		this.rateLimiter.acquire();
 	}
 
+	/**
+	 * Returns amount of available permits.
+	 *
+	 * @return number of permits
+	 */
+	public long availablePermits() {
+		return this.rateLimiter.availablePermits();
+	}
+
 }
