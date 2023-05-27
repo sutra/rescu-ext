@@ -27,7 +27,6 @@
 		<module>rescu-ext-proxy-auth</module>
 		<module>rescu-ext-singleton</module>
 		<module>rescu-ext-rate-limiter</module>
-		<module>rescu-ext-rate-meter</module>
 		<module>rescu-ext-coverage</module>
 	</modules>
 	<build>
