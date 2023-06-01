@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr.rescu.ext</groupId>
 		<artifactId>rescu-ext-rate-limiter</artifactId>
-		<version>0.0.10-SNAPSHOT</version>
+		<version>0.0.11</version>
 	</parent>
 	<artifactId>rescu-ext-rate-limiter-core</artifactId>
 	<name>ResCU Rate Limiter - Core</name>
