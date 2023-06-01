@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
-import org.oxerr.rescu.ext.proxy.auth.ProxyAuthenticationLoader;
 
 class ProxyAuthenticationLoaderTest {
 
