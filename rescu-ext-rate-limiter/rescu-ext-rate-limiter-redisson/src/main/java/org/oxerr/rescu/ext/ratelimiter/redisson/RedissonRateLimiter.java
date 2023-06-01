@@ -14,9 +14,8 @@ public class RedissonRateLimiter implements RateLimiter {
 		this.rateLimiter = rateLimiter;
 	}
 
-	public RedissonRateLimiter(RedissonClient redisson, String keyPrefix) {
-		String limiterName = String.format("%s:rateLimiter", keyPrefix);
-		this.rateLimiter = redisson.getRateLimiter(limiterName);
+	public RedissonRateLimiter(RedissonClient redisson, String name) {
+		this.rateLimiter = redisson.getRateLimiter(name);
 	}
 
 	/**
