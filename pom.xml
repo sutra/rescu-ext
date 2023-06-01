@@ -11,12 +11,12 @@
 		<artifactId>oxerr-parent</artifactId>
 		<version>1.6.2</version>
 	</parent>
-	<groupId>org.oxerr.rescu</groupId>
+	<groupId>org.oxerr.rescu.ext</groupId>
 	<artifactId>rescu-ext</artifactId>
 	<name>ResCU Extensions</name>
-	<description>Extensions to the ResCU.</description>
+	<description>ResCU Extensions.</description>
 	<packaging>pom</packaging>
-	<version>0.0.9</version>
+	<version>0.0.10</version>
 	<url>https://www.oxerr.org/rescu-ext</url>
 	<inceptionYear>2023</inceptionYear>
 	<properties>
