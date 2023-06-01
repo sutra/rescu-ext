@@ -97,4 +97,10 @@
 		<system>GitHub</system>
 		<url>https://github.com/sutra/rescu-ext/issues</url>
 	</issueManagement>
+	<distributionManagement>
+		<site>
+			<id>oxerr.org</id>
+			<url>scp://oxerr.org/usr/local/www/rescu-ext/</url>
+		</site>
+	</distributionManagement>
 </project>
