@@ -9,9 +9,10 @@
 	<parent>
 		<groupId>org.oxerr.rescu.ext</groupId>
 		<artifactId>rescu-ext-rate-limiter</artifactId>
-		<version>0.0.11</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>rescu-ext-rate-limiter-redisson</artifactId>
+	<name>ResCU Rate Limiter - Redisson Implementation</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.redisson</groupId>
