@@ -16,7 +16,7 @@
 	<name>ResCU Extensions</name>
 	<description>ResCU Extensions.</description>
 	<packaging>pom</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<url>https://www.oxerr.org/rescu-ext</url>
 	<inceptionYear>2023</inceptionYear>
 	<properties>
