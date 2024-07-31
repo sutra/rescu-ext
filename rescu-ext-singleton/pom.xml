@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr.rescu.ext</groupId>
 		<artifactId>rescu-ext</artifactId>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 	</parent>
 	<artifactId>rescu-ext-singleton</artifactId>
 	<name>ResCU Singleton Support</name>
