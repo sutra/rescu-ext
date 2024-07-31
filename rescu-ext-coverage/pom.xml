@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr.rescu.ext</groupId>
 		<artifactId>rescu-ext</artifactId>
-		<version>1.0.3</version>
+		<version>1.0.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>rescu-ext-coverage</artifactId>
 	<name>ResCU Extension Coverage</name>
